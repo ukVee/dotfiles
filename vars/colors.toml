@@ -1,0 +1,26 @@
+# Color palette - Cherry Blossom / Light Pink Scheme
+# Converted from themeswitcher/colors.sh
+
+foreground = "#e4c1cb"
+background = "#150c13"
+cursor = "#e4c1cb"
+
+color0 = "#150c13"
+color1 = "#C03F65"
+color2 = "#8E445C"
+color3 = "#A0526B"
+color4 = "#CC5274"
+color5 = "#B77188"
+color6 = "#DA728D"
+color7 = "#e4c1cb"
+color8 = "#9f878e"
+color9 = "#C03F65"
+color10 = "#8E445C"
+color11 = "#A0526B"
+color12 = "#CC5274"
+color13 = "#B77188"
+color14 = "#DA728D"
+color15 = "#e4c1cb"
+
+# Derived/alias colors
+highlight = "#C03F65"  # Same as color1

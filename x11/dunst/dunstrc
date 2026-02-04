@@ -1,0 +1,5 @@
+include "~/.config/dunst/themeswitcher/color.conf"
+
+[global]
+font = Plus Jakarta Sans 10
+# colors come from include above; add geometry/timeout tweaks here if needed

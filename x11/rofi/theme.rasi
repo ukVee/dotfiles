@@ -1,0 +1,6 @@
+* {
+    background: #150c13;
+    foreground: #e4c1cb;
+    highlight: #C03F65;
+
+}

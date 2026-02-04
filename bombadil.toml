@@ -1,0 +1,42 @@
+# Bombadil dotfiles configuration
+# https://oknozor.github.io/toml-bombadil/
+
+dotfiles_dir = "dotfiles"
+
+[settings]
+vars = ["vars/colors.toml"]
+
+[settings.dots]
+# Shared configs (always linked)
+kitty = { source = "shared/kitty", target = ".config/kitty" }
+
+# Add more shared configs as you migrate them:
+# btop = { source = "shared/btop", target = ".config/btop" }
+# starship = { source = "shared/starship.toml", target = ".config/starship.toml" }
+# nvim = { source = "shared/nvim", target = ".config/nvim" }
+# git = { source = "shared/git", target = ".config/git" }
+# fontconfig = { source = "shared/fontconfig", target = ".config/fontconfig" }
+# htop = { source = "shared/htop", target = ".config/htop" }
+# neofetch = { source = "shared/neofetch", target = ".config/neofetch" }
+# gtk-2 = { source = "shared/gtk-2.0", target = ".config/gtk-2.0" }
+# gtk-3 = { source = "shared/gtk-3.0", target = ".config/gtk-3.0" }
+
+[profiles.x11]
+posthooks = ["i3-msg reload || true", "pkill -USR1 polybar || true"]
+
+[profiles.x11.dots]
+i3 = { source = "x11/i3", target = ".config/i3" }
+polybar = { source = "x11/polybar", target = ".config/polybar" }
+picom = { source = "x11/picom", target = ".config/picom" }
+dunst = { source = "x11/dunst", target = ".config/dunst" }
+rofi = { source = "x11/rofi", target = ".config/rofi" }
+# conky = { source = "x11/conky", target = ".config/conky" }
+# i3status = { source = "x11/i3status", target = ".config/i3status" }
+
+[profiles.wayland]
+# posthooks = ["hyprctl reload || true"]
+
+# [profiles.wayland.dots]
+# hyprland = { source = "wayland/hyprland", target = ".config/hypr" }
+# waybar = { source = "wayland/waybar", target = ".config/waybar" }
+# wofi = { source = "wayland/wofi", target = ".config/wofi" }
