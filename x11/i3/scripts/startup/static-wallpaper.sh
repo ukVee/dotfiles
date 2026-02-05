@@ -6,14 +6,7 @@ source "$HOME/.config/hardware/monitors.sh"
 MON_COUNT=$(xrandr --query | grep " connected" | wc -l)
 
 WALL_DIR="/mnt/backup/photos/wallpapers"
-# you may adjust WALL_SINGLE and WALL_MULTI or pick randomly
 WALL_SINGLE="$WALL_DIR/arch_void.png"
-WALL_LEFT="$WALL_DIR/left_monitor.jpg"
-WALL_RIGHT="$WALL_DIR/right_monitor.jpg"
-
-# for debug
-# echo "Monitors: $MON_LIST"
-# echo "Count: $MON_COUNT"
 
 if ! $EXT_MON_CONNECTED; then
   # single monitor case

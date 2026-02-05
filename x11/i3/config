@@ -1,0 +1,19 @@
+
+set $mod Mod4
+font pango:Plus Jakarta Sans 13
+floating_modifier $mod
+
+include ~/.config/i3/color.conf
+include ~/.config/i3/i3-gaps/config
+include ~/.config/i3/startup.conf
+include ~/.config/window_rules.conf
+include ~/.config/i3/keybinds/i3_control.conf
+include ~/.config/i3/keybinds/start_program.conf
+include ~/.config/i3/keybinds/toggle_program.conf
+include ~/.config/i3/keybinds/volume.conf
+include ~/.config/i3/keybinds/navigation.conf
+include ~/.config/i3/keybinds/workspace.conf
+include ~/.config/i3/keybinds/i3_modes.conf
+include ~/.config/i3/workspace_assignments.conf
+include ~/.config/i3/i3_modes/resize.conf
+
