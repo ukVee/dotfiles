@@ -1,6 +1,6 @@
 * {
-    background: #150c13;
-    foreground: #e4c1cb;
-    highlight: #C03F65;
+    background: __background__;
+    foreground: __foreground__;
+    highlight: __highlight__;
 
 }
