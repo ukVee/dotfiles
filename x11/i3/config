@@ -12,6 +12,7 @@ include ~/.config/i3/keybinds/start_program.conf
 include ~/.config/i3/keybinds/toggle_program.conf
 include ~/.config/i3/keybinds/volume.conf
 include ~/.config/i3/keybinds/navigation.conf
+include ~/.config/i3/keybinds/window.conf
 include ~/.config/i3/keybinds/workspace.conf
 include ~/.config/i3/keybinds/i3_modes.conf
 include ~/.config/i3/workspace_assignments.conf

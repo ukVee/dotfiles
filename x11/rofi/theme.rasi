@@ -1,6 +1,6 @@
 * {
-    background: __background__;
-    foreground: __foreground__;
-    highlight: __highlight__;
+    background: {{ background }};
+    foreground: {{ foreground }};
+    highlight: {{ highlight }};
 
 }

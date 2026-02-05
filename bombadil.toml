@@ -25,13 +25,14 @@ posthooks = ["i3-msg reload || true", "pkill -USR1 polybar || true"]
 
 [profiles.x11.dots]
 hardware = { source = "x11/hardware", target = ".config/hardware" }
+i3-scripts = {source = "x11/i3-scripts", target = ".config/i3/scripts", direct = true }
 i3 = { source = "x11/i3", target = ".config/i3" }
+polybar-scripts = { source = "x11/polybar-scripts", target = ".config/polybar/scripts", direct = true }
 polybar = { source = "x11/polybar", target = ".config/polybar" }
 picom = { source = "x11/picom", target = ".config/picom" }
 dunst = { source = "x11/dunst", target = ".config/dunst" }
 rofi = { source = "x11/rofi", target = ".config/rofi" }
-# conky = { source = "x11/conky", target = ".config/conky" }
-# i3status = { source = "x11/i3status", target = ".config/i3status" }
+
 
 [profiles.wayland]
 # posthooks = ["hyprctl reload || true"]

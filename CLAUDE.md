@@ -31,14 +31,16 @@ bombadil link -w
 - `hooks/` - Pre/post hooks for bombadil operations
 
 ### Templating System
-Bombadil uses `__variable__` syntax for variable substitution. Variables defined in `vars/colors.toml` get injected into config files during linking.
+Bombadil uses the [Tera templating engine](https://keats.github.io/tera/) with `{{ variable }}` syntax for variable substitution. Variables defined in `vars/colors.toml` get injected into config files during linking.
 
 Example in `shared/kitty/kitty.conf`:
 ```
-background __background__
-foreground __foreground__
-color0 __color0__
+background {{ background }}
+foreground {{ foreground }}
+color0 {{ color0 }}
 ```
+
+**Note:** Shell scripts with bash syntax like `${#var}` (string length) can conflict with Tera's `{#` comment syntax. Either use `{% raw %}...{% endraw %}` blocks around such code, or place scripts in a directory linked with `direct = true` to skip templating.
 
 ### Profiles
 - **x11**: Active profile for X11/i3 setup. Has posthooks that reload i3 and polybar after linking.

@@ -40,7 +40,7 @@ trap cleanup EXIT INT TERM
 
 scroll_event() {
   local text="$1"
-  local text_length=${#text}
+  local text_length={% raw %}${#text}{% endraw %}
   local total_positions=$((text_length + SCROLL_WIDTH))
 
   # Scroll from right to left
@@ -58,7 +58,7 @@ scroll_event() {
     fi
 
     # Pad with spaces on the right
-    while ((${#visible_text} < SCROLL_WIDTH)); do
+    while (({% raw %}${#visible_text}{% endraw %} < SCROLL_WIDTH)); do
       visible_text+=" "
     done
 
