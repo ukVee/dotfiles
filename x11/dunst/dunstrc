@@ -1,4 +1,4 @@
-include "~/.config/dunst/themeswitcher/color.conf"
+include "~/.config/dunst/color.conf"
 
 [global]
 font = Plus Jakarta Sans 10

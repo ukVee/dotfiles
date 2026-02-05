@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-source "$HOME/.config/polybar/helperscripts/status_common.sh"
+source "$HOME/.config/polybar/scripts/helper_scripts/status_common.sh"
 
 network_status

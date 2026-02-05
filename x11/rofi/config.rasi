@@ -1,4 +1,4 @@
-@theme "~/.config/rofi/themeswitcher/theme.rasi"
+@theme "~/.config/rofi/theme.rasi"
 
 configuration {
     modi: "drun,run";

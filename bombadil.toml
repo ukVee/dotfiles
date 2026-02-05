@@ -25,6 +25,7 @@ kitty = { source = "shared/kitty", target = ".config/kitty" }
 posthooks = ["i3-msg reload || true", "pkill -USR1 polybar || true"]
 
 [profiles.x11.dots]
+hardware = { source = "x11/shared_scripts", target = ".config/hardware" }
 i3 = { source = "x11/i3", target = ".config/i3" }
 polybar = { source = "x11/polybar", target = ".config/polybar" }
 picom = { source = "x11/picom", target = ".config/picom" }

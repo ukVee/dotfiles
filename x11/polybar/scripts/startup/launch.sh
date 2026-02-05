@@ -30,4 +30,4 @@ else
   polybar -c "$CONFIG" cherrybar &
 fi
 
-$HOME/.config/polybar/apply-edge-rhombus-mask.sh
+$HOME/.config/polybar/scripts/masks/apply-edge-rhombus-mask.sh

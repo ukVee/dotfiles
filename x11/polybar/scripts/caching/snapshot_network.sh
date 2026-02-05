@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source "$HOME/.config/polybar/helperscripts/status_common.sh"
+source "$HOME/.config/polybar/scripts/helper_scripts/status_common.sh"
 
 CACHE_DIR="$HOME/.cache/polybar"
 CACHE_FILE="$CACHE_DIR/peek_network.txt"
