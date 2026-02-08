@@ -35,9 +35,9 @@ rofi = { source = "x11/rofi", target = ".config/rofi" }
 
 
 [profiles.wayland]
-# posthooks = ["hyprctl reload || true"]
+posthooks = ["hyprctl reload || true"]
 
-# [profiles.wayland.dots]
-# hyprland = { source = "wayland/hyprland", target = ".config/hypr" }
-# waybar = { source = "wayland/waybar", target = ".config/waybar" }
+[profiles.wayland.dots]
+hyprland = { source = "wayland/hypr", target = ".config/hypr" }
+waybar = { source = "wayland/waybar", target = ".config/waybar" }
 # wofi = { source = "wayland/wofi", target = ".config/wofi" }
