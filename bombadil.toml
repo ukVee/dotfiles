@@ -40,4 +40,4 @@ posthooks = ["hyprctl reload || true"]
 [profiles.wayland.dots]
 hyprland = { source = "wayland/hypr", target = ".config/hypr" }
 waybar = { source = "wayland/waybar", target = ".config/waybar" }
-# wofi = { source = "wayland/wofi", target = ".config/wofi" }
+wayland-scripts = { source = "scripts/wayland", target = ".local/lib/scripts/wayland", direct = true}
