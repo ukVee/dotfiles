@@ -1,25 +1,265 @@
 # Get editor completions based on the config schema
 "$schema" = 'https://starship.rs/config-schema.json'
-#add blank line between prompts
-add_newline = true
-follow_symlinks = false
+# ─── Starship Prompt Configuration ───────────────────────────────────────────
+# Aesthetic-first powerline layout with contextual awareness
+# Nerd Font required (CascadiaCode NF recommended)
+#
+# Layout:
+#   Line 1: [directory] [git] [rust] [python] [docker] ···· [battery] [time]
+#   Line 2: [prompt character]
+
+# ─── Global ──────────────────────────────────────────────────────────────────
+
+# Module ordering — left side context, right side ambient system info
+format = """
+[](fg:surface0)\
+$directory\
+[](fg:surface0 bg:overlay0)\
+$git_branch\
+$git_status\
+[](fg:overlay0 bg:surface1)\
+$rust\
+$python\
+$docker_context\
+[](fg:surface1)\
+$fill\
+$cmd_duration\
+$battery\
+$hostname\
+$time\
+$line_break\
+$character"""
+
+# Pastel palette — using Catppuccin Mocha-inspired hex values
+# Swap these out if you prefer a different palette
+palette = "catppuccin_mocha"
+
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo  = "#f2cdcd"
+pink      = "#f5c2e7"
+mauve     = "#cba6f7"
+red       = "#f38ba8"
+maroon    = "#eba0ac"
+peach     = "#fab387"
+yellow    = "#f9e2af"
+green     = "#a6e3a1"
+teal      = "#94e2d5"
+sky       = "#89dceb"
+sapphire  = "#74c7ec"
+blue      = "#89b4fa"
+lavender  = "#b4befe"
+text      = "#cdd6f4"
+subtext1  = "#bac2de"
+subtext0  = "#a6adc8"
+overlay2  = "#9399b2"
+overlay1  = "#7f849c"
+overlay0  = "#6c7086"
+surface2  = "#585b70"
+surface1  = "#45475a"
+surface0  = "#313244"
+base      = "#1e1e2e"
+mantle    = "#181825"
+crust     = "#11111b"
+
+# ─── Fill (pushes right-side modules to the edge) ───────────────────────────
+
+[fill]
+symbol = " "
+
+# ─── Directory ───────────────────────────────────────────────────────────────
 
 [directory]
-#truncate using "..." if path is long
+format = "[ $path ]($style)"
+style = "bg:surface0 fg:sapphire"
 truncation_length = 3
-truncation_symbol = ">>"
-truncate_to_repo = true
-read_only = "🔒"
-read_only_style = "red"
-format = "[$path]($style) "
-style = "bold purple"
+truncation_symbol = "…/"
+# Substitute ~ for home
+home_symbol = "~"
+
+# ─── Git ─────────────────────────────────────────────────────────────────────
+
+[git_branch]
+format = "[ $symbol$branch ]($style)"
+symbol = " "
+style = "bg:overlay0 fg:text"
+truncation_length = 24
+truncation_symbol = "…"
+
+[git_status]
+format = "[$all_status$ahead_behind]($style)"
+style = "bg:overlay0 fg:peach"
+# Clean/dirty only — strip it down to a single indicator
+conflicted = " "
+ahead = ""
+behind = ""
+diverged = ""
+up_to_date = ""
+untracked = " "
+stashed = ""
+modified = " "
+staged = " "
+renamed = ""
+deleted = " "
+
+# ─── Language / Environment Context ──────────────────────────────────────────
+
+[rust]
+format = "[ $symbol$version ]($style)"
+symbol = "🦀 "
+style = "bg:surface1 fg:peach"
+
+[python]
+format = "[ $symbol$version( \\($virtualenv\\)) ]($style)"
+symbol = " "
+style = "bg:surface1 fg:yellow"
+# Only show virtualenv name, not the full path
+python_binary = ["python3", "python"]
+
+[docker_context]
+format = "[ $symbol$context ]($style)"
+symbol = " "
+style = "bg:surface1 fg:sky"
+only_with_files = true
+
+# ─── Package version (from Cargo.toml, pyproject.toml, etc.) ────────────────
+
+[package]
+format = "[ $symbol$version ]($style)"
+symbol = "📦 "
+style = "bg:surface1 fg:lavender"
+display_private = true
+
+# ─── System Ambient ──────────────────────────────────────────────────────────
+
+[cmd_duration]
+format = "[ 󰔟 $duration]($style) "
+style = "fg:overlay1"
+min_time = 3_000          # only show if command took >3s
+show_milliseconds = false
+
+[battery]
+format = "[$symbol$percentage]($style) "
+
+# Only surfaces when charge is concerning
+[[battery.display]]
+threshold = 25
+style = "fg:red"
+discharging_symbol = "󰁺 "
+charging_symbol = "󰢜 "
+
+[[battery.display]]
+threshold = 50
+style = "fg:yellow"
+discharging_symbol = "󰁾 "
+charging_symbol = "󰂈 "
+
+# Above 50% — hidden entirely (no display entry = not shown)
+
+[hostname]
+format = "[ $ssh_symbol$hostname]($style) "
+style = "fg:mauve"
+ssh_only = true            # only render over SSH
+ssh_symbol = "󰣀 "
+
+[username]
+format = "[$user]($style)@"
+style_user = "fg:teal"
+style_root = "fg:red bold"
+show_always = false        # only over SSH (pairs with hostname)
+
+[time]
+format = "[ $time]($style)"
+style = "fg:overlay1"
+disabled = false
+time_format = "%H:%M"
+
+# ─── Prompt Character (Powerline Arrow) ─────────────────────────────────────
 
 [character]
-success_symbol = "[➜](bold green) "
-error_symbol   = "[✘](bold red) "
-vicmd_symbol   = "[❮](bold purple) "
+success_symbol = "[❯](bold fg:green)"
+error_symbol = "[x](bold fg:red)"
+vimcmd_symbol = "[❮](bold fg:mauve)"
 
-[cmd_duration] 
-min_time = 500
-format = 'ttc [$duration](bold purple)'
+# ─── Disabled Modules ───────────────────────────────────────────────────────
+# These are auto-detected but not useful for your workflow.
+# Uncomment any you want back.
+
+[nodejs]
+disabled = true
+
+[java]
+disabled = true
+
+[golang]
+disabled = true
+
+[php]
+disabled = true
+
+[ruby]
+disabled = true
+
+[lua]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[swift]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[haskell]
+disabled = true
+
+[julia]
+disabled = true
+
+[nim]
+disabled = true
+
+[perl]
+disabled = true
+
+[scala]
+disabled = true
+
+[zig]
+disabled = true
+
+[dart]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[erlang]
+disabled = true
+
+[terraform]
+disabled = true
+
+[vagrant]
+disabled = true
+
+[nix_shell]
+disabled = true
+
+[conda]
+disabled = true
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[azure]
+disabled = true
 

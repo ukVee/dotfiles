@@ -1,0 +1,55 @@
+[colors]
+background = "{{ background }}"
+foreground = "{{ foreground }}"
+
+# Selection
+selection-background = "{{ highlight }}"
+selection-foreground = "{{ foreground }}"
+
+# Navigation
+tabs-active = "{{ highlight }}"
+tabs-active-foreground = "{{ foreground }}"
+tabs-active-highlight = "{{ highlight }}"
+bar = "{{ background }}"
+split = "{{ color8 }}"
+cursor = "{{ cursor }}"
+vi-cursor = "{{ cursor }}"
+
+# Search
+search-match-background = "{{ color3 }}"
+search-match-foreground = "{{ background }}"
+search-focused-match-background = "{{ highlight }}"
+search-focused-match-foreground = "{{ foreground }}"
+
+# Regular colors
+black = "{{ color0 }}"
+blue = "{{ color4 }}"
+cyan = "{{ color6 }}"
+green = "{{ color2 }}"
+magenta = "{{ color5 }}"
+red = "{{ color1 }}"
+tabs = "{{ background }}"
+white = "{{ color7 }}"
+yellow = "{{ color3 }}"
+
+# Dim colors
+dim-black = "{{ color0 }}"
+dim-blue = "{{ color4 }}"
+dim-cyan = "{{ color6 }}"
+dim-foreground = "{{ color8 }}"
+dim-green = "{{ color2 }}"
+dim-magenta = "{{ color5 }}"
+dim-red = "{{ color1 }}"
+dim-white = "{{ color7 }}"
+dim-yellow = "{{ color3 }}"
+
+# Light colors
+light-black = "{{ color8 }}"
+light-blue = "{{ color12 }}"
+light-cyan = "{{ color14 }}"
+light-foreground = "{{ color15 }}"
+light-green = "{{ color10 }}"
+light-magenta = "{{ color13 }}"
+light-red = "{{ color9 }}"
+light-white = "{{ color15 }}"
+light-yellow = "{{ color11 }}"

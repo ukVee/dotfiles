@@ -1,0 +1,47 @@
+line-height = 1.5
+padding-x = 10
+padding-y = [10, 10]
+env-vars = ["EDITOR=nvim"]
+theme = "cherry-blossum"
+
+
+[cursor]
+shape = 'underline'
+blinking = true
+blinking-interval = 350
+
+[fonts]
+size = 18
+features = []
+use-drawable-chars = true
+symbol-map = []
+disable-warnings-not-found = false
+additional-dirs = []
+
+[fonts.regular]
+family = "cascadiacode"
+style = "Normal"
+width = "Normal"
+weight = 400
+
+[fonts.bold]
+family = "cascadiacode"
+style = "Normal"
+width = "Normal"
+weight = 800
+
+[fonts.italic]
+family = "cascadiacode"
+style = "Italic"
+width = "Normal"
+weight = 400
+
+[fonts.bold-italic]
+family = "cascadiacode"
+style = "Italic"
+width = "Normal"
+weight = 800
+
+[renderer]
+performance = "Low"
+

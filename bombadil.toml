@@ -18,7 +18,9 @@ gtk-2 = { source = "shared/gtk-2.0", target = ".config/gtk-2.0" }
 gtk-3 = { source = "shared/gtk-3.0", target = ".config/gtk-3.0" }
 thunar = { source = "shared/Thunar", target = ".config/Thunar" }
 flameshot = { source = "shared/flameshot", target = ".config/flameshot" }
-keepassxc = { source = "shared/keepassxc", target = ".config/keepassxc"}
+keepassxc = { source = "shared/keepassxc", target = ".config/keepassxc" }
+dunst = { source = "shared/dunst", target = ".config/dunst" }
+rio = { source = "shared/rio", target = ".config/rio" }
 
 [profiles.x11]
 posthooks = ["i3-msg reload || true", "pkill -USR1 polybar || true"]
@@ -30,7 +32,6 @@ i3 = { source = "x11/i3", target = ".config/i3" }
 polybar-scripts = { source = "x11/polybar-scripts", target = ".config/polybar/scripts", direct = true }
 polybar = { source = "x11/polybar", target = ".config/polybar" }
 picom = { source = "x11/picom", target = ".config/picom" }
-dunst = { source = "x11/dunst", target = ".config/dunst" }
 rofi = { source = "x11/rofi", target = ".config/rofi" }
 
 
