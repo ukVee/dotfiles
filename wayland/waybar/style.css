@@ -11,12 +11,12 @@ window#waybar {
 
 #workspaces button {
   padding: 5px;
-  color: #cdd6f4;
+  color: {{color0}};
 }
 
 #workspaces button.active {
-  background-color: #89b4fa;
-  color: #1e1e2e;
+  background-color: {{foreground}};
+  color: {{color1}};
 }
 
 #clock, #battery, #network, #cpu, #memory {
